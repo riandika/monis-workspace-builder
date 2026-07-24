@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Monis Workspace Builder
 
-## Getting Started
+An interactive workspace configurator built for Monis.rent, allowing digital nomads in Bali to visually design and rent their ideal office setup.
 
-First, run the development server:
+## Approach & Tech Choices
+
+I wanted to make the experience feel more like a fun sandbox or a room planner rather than just scrolling through a standard e-commerce catalog. I built the foundation with **Next.js** and **Tailwind CSS** because it allows for fast prototyping and clean, maintainable styling. 
+
+Instead of using raw JPEG/PNG product images (which often have messy backgrounds or weird perspectives), I built the items using SVG components. This keeps the design ultra-clean, transparent, and scalable. For the drag-and-drop interactions, I used **GSAP (specifically GSAP Draggable)**. It handles physics, bounds, and smooth animations much better than standard HTML5 drag-and-drop, making the 3D isometric stage feel responsive and alive.
+
+## What I'd improve with more time
+
+- **Smart Snapping**: I'd love to add a snapping system so monitors automatically snap onto the center of the desk, and chairs align perfectly when dragged close to them.
+- **Dynamic Z-Index (Depth Sorting)**: Right now, z-index is tied to the item's category (monitors are always above desks). With more time, I'd calculate the z-index based on the item's Y-coordinate so things naturally fall "behind" or "in front" of each other dynamically.
+- **Item Rotation**: Letting users rotate items (like angling a plant in the corner or placing a side table) for more realistic room layouts.
+- **Backend Integration**: Wiring up the checkout form to a real database, adding Stripe for payments, and letting users save their workspace drafts to an account.
+
+## Running Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
